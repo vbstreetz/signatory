@@ -15,7 +15,7 @@
     "install:client": "npm pack generated-client/typescript/ && mv etclabscore-signatory-client-*.tgz signatory-client.tgz && npm install --no-save signatory-client.tgz",
     "clean": "npm uninstall @etclabscore/signatory-client",
     "test": "npm run lint && npm run build && jest --coverage",
-    "preinstall": "chmod +x .bin/open-rpc-typings && npm run build"
+    "preinstall": "npm run build"
   },
   "bin": {
     "signatory": "./build/src/cli/index.js"
