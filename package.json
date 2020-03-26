@@ -14,7 +14,8 @@
     "build:client": "open-rpc-generator-client --ts-name=@etclabscore/signatory-client --rs-name=signatory-client -o generated-client && ( cd generated-client/typescript && npm install && npm run build)",
     "install:client": "npm pack generated-client/typescript/ && mv etclabscore-signatory-client-*.tgz signatory-client.tgz && npm install --no-save signatory-client.tgz",
     "clean": "npm uninstall @etclabscore/signatory-client",
-    "test": "npm run lint && npm run build && jest --coverage"
+    "test": "npm run lint && npm run build && jest --coverage",
+    "preinstall": "chmod +x .bin/open-rpc-typings && npm run build"
   },
   "bin": {
     "signatory": "./build/src/cli/index.js"
